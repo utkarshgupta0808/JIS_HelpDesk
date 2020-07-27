@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/image_background"
+    android:orientation="vertical"
+    tools:context=".ComplaintActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:title="JIS HelpDesk"
+        app:titleTextColor="@color/colorAccent" >
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Complaint Form"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout"
+        android:layout_gravity="center_vertical"
+        android:scrollbars="vertical"
+        android:orientation="vertical">
+
+
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="55dp"
+           android:layout_marginTop="40dp"
+           android:hint="Full Name"
+           android:paddingStart="10dp"
+           android:paddingEnd="10dp"
+           android:drawableStart="@drawable/ic_baseline_person_24"
+           android:layout_marginStart="20dp"
+           android:paddingTop="5dp"
+           android:paddingBottom="5dp"
+           android:layout_marginEnd="20dp"
+           android:background="@drawable/custom_edittext"
+           android:id="@+id/name"/>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:hint="Mobile Number"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingStart="10dp"
+            android:drawableStart="@drawable/ic_baseline_phone_24"
+            android:paddingEnd="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/custom_edittext"
+            android:inputType="number"
+            android:id="@+id/mobile"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:hint="Address"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:layout_marginStart="20dp"
+            android:drawableStart="@drawable/ic_baseline_location_on_24"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/custom_edittext"
+            android:id="@+id/address"/>
+
+        <EditText
+            android:id="@+id/complaint"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/custom_edittext"
+            android:hint="Please mention your complaint here"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:scrollbars="vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
+            android:layout_gravity="end"
+            android:layout_marginTop="40dp"
+            android:paddingBottom="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_button1"
+                android:text=" Submit "
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textColor="@color/colorAccent"
+                android:layout_gravity="start"
+                android:layout_marginEnd="20dp"
+                android:id="@+id/buttonSubmit"
+                android:layout_marginStart="30dp"/>
+
+            <Button
+                android:id="@+id/buttonReset"
+                android:layout_width="109dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/custom_button2"
+                android:text="Reset"
+                android:textColor="@color/colorPrimaryDark" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

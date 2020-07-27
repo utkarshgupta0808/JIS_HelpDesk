@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.is.jishelpdesk">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name="com.is.jishelpdesk.ComplaintRegisteredActivity"
+            android:parentActivityName="com.is.jishelpdesk.WelcomePageActivity"/>
+        <activity
+            android:name="com.is.jishelpdesk.ComplaintInfoEmpActivity"
+            android:parentActivityName="com.is.jishelpdesk.ComplaintInfoEmpActivity" />
+        <activity android:name="com.is.jishelpdesk.EmpProfileActivity" />
+        <activity
+            android:name="com.is.jishelpdesk.AssignEmpActivity"
+            android:parentActivityName="com.is.jishelpdesk.ComplaintAdminActivity" />
+        <activity
+            android:name="com.is.jishelpdesk.ComplaintInfoAdminActivity"
+            android:parentActivityName="com.is.jishelpdesk.ComplaintAdminActivity" />
+        <activity
+            android:name="com.is.jishelpdesk.ForgotPassAdminActivity"
+            android:parentActivityName="com.is.jishelpdesk.AdminLoginActivity" />
+        <activity
+            android:name="com.is.jishelpdesk.ComplaintEmpActivity"
+            android:parentActivityName="com.is.jishelpdesk.WelcomePageActivity" />
+        <activity
+            android:name="com.is.jishelpdesk.EmpRegisterActivity"
+            android:parentActivityName="com.is.jishelpdesk.EmpLoginActivity" />
+        <activity
+            android:name="com.is.jishelpdesk.ComplaintAdminActivity"
+            android:parentActivityName="com.is.jishelpdesk.WelcomePageActivity" />
+        <activity
+            android:name="com.is.jishelpdesk.EmpLoginActivity"
+            android:parentActivityName="com.is.jishelpdesk.WelcomePageActivity" />
+        <activity
+            android:name="com.is.jishelpdesk.AdminLoginActivity"
+            android:parentActivityName="com.is.jishelpdesk.WelcomePageActivity" />
+        <activity
+            android:name="com.is.jishelpdesk.ComplaintActivity"
+            android:parentActivityName="com.is.jishelpdesk.WelcomePageActivity" />
+        <activity android:name="com.is.jishelpdesk.WelcomePageActivity" />
+        <activity android:name="com.is.jishelpdesk.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+    </application>
+
+</manifest>

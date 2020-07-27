@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "769572441385",
+    "firebase_url": "https://jis-helpdesk-2d1bb.firebaseio.com",
+    "project_id": "jis-helpdesk-2d1bb",
+    "storage_bucket": "jis-helpdesk-2d1bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769572441385:android:555740f2ebd308e5f0fb38",
+        "android_client_info": {
+          "package_name": "com.is.jishelpdesk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769572441385-ipmgbck8osulu9th8jatet5vpp1c24u3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW1WCox9TlY963vz4Sd_hReu_UdQwIt4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769572441385-ipmgbck8osulu9th8jatet5vpp1c24u3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

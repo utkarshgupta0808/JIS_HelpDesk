@@ -41,7 +41,7 @@ public class ComplaintActivity extends AppCompatActivity {
     String cDate;
     Calendar calendar;
     String currentDate;
-    long c;
+    long counterComplaint;
 
 
 
@@ -113,9 +113,9 @@ public class ComplaintActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             DocumentSnapshot documentSnapshot=task.getResult();
 
-                            c= Objects.requireNonNull(documentSnapshot).getLong("countComplaint");
+                            counterComplaint= Objects.requireNonNull(documentSnapshot).getLong("countComplaint");
 
-                            c++;
+                            counterComplaint++;
 
 
 
@@ -124,7 +124,7 @@ public class ComplaintActivity extends AppCompatActivity {
                                     .collection("Counter").document("123456789");
 
                             Map<String, Object>map1=new HashMap<>();
-                            map1.put("countComplaint", c);
+                            map1.put("countComplaint", counterComplaint);
 
                             docRef.update(map1).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
@@ -138,7 +138,7 @@ public class ComplaintActivity extends AppCompatActivity {
                                 }
                             });
 
-                            user.put("tokenId", c);
+                            user.put("tokenId", counterComplaint);
                             user.put("name", cName);
                             user.put("mobile", cMobile);
                             user.put("status", "Unassigned");
@@ -151,7 +151,7 @@ public class ComplaintActivity extends AppCompatActivity {
                                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                         @Override
                                         public void onSuccess(DocumentReference documentReference) {
-                                            Toast.makeText(ComplaintActivity.this, "Complaint Registered with token id "+ c, Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(ComplaintActivity.this, "Complaint Registered with token id "+ counterComplaint, Toast.LENGTH_SHORT).show();
                                             resetFields();
 
                                         }
@@ -169,7 +169,7 @@ public class ComplaintActivity extends AppCompatActivity {
                             progressDialog.dismiss();
                             Intent intent=new Intent(ComplaintActivity.this, ComplaintRegisteredActivity.class);
                             Bundle bundle=new Bundle();
-                            bundle.putLong("tokenID",c);
+                            bundle.putLong("tokenID",counterComplaint);
                             intent.putExtras(bundle);
                             startActivity(intent);
                             finish();

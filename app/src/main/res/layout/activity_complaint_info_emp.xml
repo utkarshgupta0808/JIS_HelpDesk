@@ -9,13 +9,40 @@
     tools:context=".ComplaintInfoAdminActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/toolbar"
-        android:gravity="center"
-        app:title="JIS HelpDesk"
-        android:background="@color/colorPrimary"
-        app:titleTextColor="@color/colorAccent"/>
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                android:layout_marginEnd="5dp"/>
+
+            <TextView
+                android:id="@+id/comp_name_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Details"
+                android:textColor="@color/colorWhite" />
+
+
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
 
     <TextView
         android:layout_width="match_parent"
@@ -34,7 +61,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"
+        android:scrollbars="none"
         android:measureAllChildren="true">
 
         <LinearLayout
@@ -81,7 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="qwerty"
+                    android:text="Token Id"
                     android:textColor="@color/colorPrimary"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -106,7 +133,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="qwerty"
+                    android:text="Name"
                     android:textColor="@color/colorPrimary"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -131,7 +158,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="qwerty"
+                    android:text="Mobile Number"
                     android:textColor="@color/colorPrimary"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -156,7 +183,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="qwerty"
+                    android:text="Address"
                     android:textColor="@color/colorPrimary"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -182,7 +209,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="qwerty"
+                    android:text="Date"
                     android:textColor="@color/colorPrimary"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -213,19 +240,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="qwertyjjtuuhuhiuhuhuhuojhj ."
+                android:layout_marginEnd="10dp"
+                android:text="Complaint"
                 android:textColor="@color/colorPrimary"
                 android:textSize="20sp" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_solved"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="30dp"
                 android:layout_marginBottom="20dp"
-                android:background="@drawable/custom_button1"
+                app:background="@color/colorPrimaryDark"
+                app:cornerRadius="20dp"
                 android:text="Complaint Solved"
                 android:textColor="@color/colorAccent" />
 

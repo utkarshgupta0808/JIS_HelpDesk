@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class AdminLoginActivity extends AppCompatActivity {
     Button btn_login;
     Toolbar toolbar;
     TextView textView;
+    ImageView btnBack;
     private ProgressDialog progressDialog;
 //    AtomicReference<String> userId = new AtomicReference<>();
 
@@ -43,13 +45,24 @@ public class AdminLoginActivity extends AppCompatActivity {
         btn_login=findViewById(R.id.login_button);
         textView=findViewById(R.id.forgot_pass);
         mAuth = FirebaseAuth.getInstance();
+        btnBack=findViewById(R.id.btn_back);
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(AdminLoginActivity.this, ForgotPassAdminActivity.class);
                 startActivity(intent);
+                finish();
 
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(AdminLoginActivity.this, WelcomePageActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -76,7 +89,7 @@ public class AdminLoginActivity extends AppCompatActivity {
                             if (task.isSuccessful()){
 
                                 Toast.makeText(AdminLoginActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(AdminLoginActivity.this, ComplaintAdminActivity.class);
+                                Intent intent = new Intent(AdminLoginActivity.this, AdminMainActivity.class);
 //                            intent.putExtra("user_id", "" + userId);
                                 startActivity(intent);
                                 finish();
@@ -105,6 +118,7 @@ public class AdminLoginActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(AdminLoginActivity.this);
         progressDialog.show();
         progressDialog.setContentView(R.layout.process_dialog);
+        progressDialog.setCanceledOnTouchOutside(false);
         Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(
                 android.R.color.transparent
         );
@@ -135,7 +149,7 @@ public class AdminLoginActivity extends AppCompatActivity {
 
     private void sendToMain() {
 
-        Intent mainIntent = new Intent(AdminLoginActivity.this, ComplaintAdminActivity.class);
+        Intent mainIntent = new Intent(AdminLoginActivity.this, AdminMainActivity.class);
         startActivity(mainIntent);
         finish();
 

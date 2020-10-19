@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="20dp"
     android:elevation="10dp"
     android:paddingStart="10dp"
     android:paddingEnd="10dp"
     android:paddingBottom="10dp"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"
     android:paddingTop="10dp"
     android:layout_gravity="center"
     android:background="@drawable/background1"
@@ -16,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginEnd="10dp"
-        android:background="@drawable/background1"
+
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
         android:layout_marginStart="10dp"
@@ -25,11 +26,39 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Are You Sure Want to Logout"
+            android:text="Are You Sure??"
             android:layout_marginTop="5dp"
             android:layout_gravity="center"
             android:textSize="20sp"
             android:textColor="@color/colorPrimaryDark"/>
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="20dp">-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:background="@drawable/custom_button1"-->
+<!--                android:textColor="@color/colorAccent"-->
+<!--                android:text="YES"-->
+<!--                android:id="@+id/btn_yes"/>-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:background="@drawable/custom_button2"-->
+<!--                android:textColor="@color/colorPrimaryDark"-->
+<!--                android:text="CANCEL"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:id="@+id/btn_cancel"/>-->
+
+<!--            -->
+
+<!--        </LinearLayout>-->
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -38,20 +67,22 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:background="@drawable/custom_button1"
-                android:textColor="@color/colorAccent"
+                app:rippleColor="#8A8E12"
+                android:textColor="#ffffff"
                 android:text="YES"
+                app:cornerRadius="10dp"
                 android:id="@+id/btn_yes"/>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:background="@drawable/custom_button2"
-                android:textColor="@color/colorPrimaryDark"
+                android:backgroundTint="#8A8E12"
+                app:rippleColor="@color/colorPrimary"
                 android:text="CANCEL"
+                app:cornerRadius="10dp"
                 android:layout_marginStart="20dp"
                 android:id="@+id/btn_cancel"/>
 

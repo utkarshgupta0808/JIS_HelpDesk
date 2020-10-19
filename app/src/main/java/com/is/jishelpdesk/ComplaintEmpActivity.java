@@ -13,10 +13,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -34,6 +38,8 @@ public class ComplaintEmpActivity extends AppCompatActivity {
     FirebaseFirestore firebaseFirestore;
     RecyclerView recyclerView;
     ComplaintEmpAdapter complaintEmpAdapter;
+    ImageView btanBack;
+    TextView empNameToolbar;
     long countActive, countTotal;
 
     @Override
@@ -47,6 +53,33 @@ public class ComplaintEmpActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
         btnProfile=findViewById(R.id.btn_profile);
+        btanBack=findViewById(R.id.btn_back);
+        empNameToolbar=findViewById(R.id.emp_name_toolbar);
+
+        firebaseFirestore.collection("Employee").document(mAuth.getUid()).get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        empNameToolbar.setText(documentSnapshot.getString("name"));
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+                Toast.makeText(ComplaintEmpActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+        btanBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent=new Intent(ComplaintEmpActivity.this,WelcomePageActivity.class);
+                finish();
+//                startActivity(intent);
+            }
+        });
 
 
 
@@ -105,11 +138,13 @@ public class ComplaintEmpActivity extends AppCompatActivity {
                                 extra.putLong("empid", (Long) documentSnapshot.get("empid"));
                                 extra.putString("number", (String) documentSnapshot.get("number"));
                                 extra.putString("aadhaar", (String) documentSnapshot.get("aadhaar"));
+                                extra.putString("photo", (String) documentSnapshot.get("photo"));
                                 extra.putLong("cActive",  countActive);
                                 extra.putLong("cTotal", countTotal);
                                 extra.putBoolean("stat",false);
                                 intent.putExtras(extra);
                                 startActivity(intent);
+                                finish();
 
                             }
 
@@ -142,6 +177,15 @@ public class ComplaintEmpActivity extends AppCompatActivity {
     private void logOut() {
         mAuth.signOut();
         sendToLogin();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+//        Intent intent=new Intent(ComplaintEmpActivity.this,WelcomePageActivity.class);
+        finish();
+//        startActivity(intent);
+
     }
 
     private void sendToLogin() {

@@ -21,17 +21,17 @@ public class ComplaintAdminAdapter extends FirestoreRecyclerAdapter<ComplaintMod
 
     @SuppressLint("SetTextI18n")
     @Override
-    protected void onBindViewHolder(@NonNull final MyViewHolder holder, int position, @NonNull final ComplaintModel model) {
+    protected void onBindViewHolder(@NonNull final MyViewHolder holder, final int position, @NonNull final ComplaintModel model) {
         holder.tokenId.setText("" +model.getTokenId());
         holder.name.setText(model.getName());
         holder.date.setText(model.getDate());
         holder.status.setText(model.getStatus());
         holder.cardView.setVerticalScrollBarEnabled(true);
 
-        holder.viewDetails.setOnClickListener(new View.OnClickListener() {
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(holder.viewDetails.getContext(), ComplaintInfoAdminActivity.class);
+                Intent intent=new Intent(holder.cardView.getContext(), ComplaintInfoAdminActivity.class);
                 Bundle bundle=new Bundle();
                 bundle.putLong("tokenId", model.getTokenId());
                 bundle.putString("name", model.getName());
@@ -40,8 +40,9 @@ public class ComplaintAdminAdapter extends FirestoreRecyclerAdapter<ComplaintMod
                 bundle.putString("complaint", model.getComplaint());
                 bundle.putString("address", model.getAddress());
                 bundle.putString("number1", model.getMobile());
+                bundle.putString("complaintId", getSnapshots().getSnapshot(position).getId());
                 intent.putExtras(bundle);
-                holder.viewDetails.getContext().startActivity(intent);
+                holder.cardView.getContext().startActivity(intent);
 
             }
         });
@@ -63,7 +64,7 @@ public class ComplaintAdminAdapter extends FirestoreRecyclerAdapter<ComplaintMod
         TextView name;
         TextView date;
         TextView status;
-        TextView viewDetails;
+//        TextView viewDetails;
         CardView cardView;
 
 
@@ -74,7 +75,7 @@ public class ComplaintAdminAdapter extends FirestoreRecyclerAdapter<ComplaintMod
             name = itemView.findViewById(R.id.cname);
             date = itemView.findViewById(R.id.date);
             status = itemView.findViewById(R.id.status);
-            viewDetails=itemView.findViewById(R.id.view_details);
+//            viewDetails=itemView.findViewById(R.id.view_details);
             cardView=itemView.findViewById(R.id.card_complaint);
 
 

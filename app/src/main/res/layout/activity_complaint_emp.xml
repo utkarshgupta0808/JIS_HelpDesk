@@ -9,36 +9,66 @@
     tools:context=".ComplaintEmpActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
         android:id="@+id/toolbar"
-        app:titleTextColor="@color/colorAccent"
-        app:title="JIS HelpDesk">
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
 
-        <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:textColor="@color/colorAccent"
-            android:id="@+id/btn_logout"
-            android:src="@drawable/ic_logout"
-            android:gravity="center"
-            android:background="@color/colorPrimary"
-            android:layout_gravity="end"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:textColor="@color/colorAccent"
-            android:id="@+id/btn_profile"
-            android:src="@drawable/ic_icon_profile"
-            android:gravity="center"
-            android:background="@color/colorPrimary"
-            android:layout_gravity="end"/>
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                android:layout_marginEnd="5dp"/>
+
+            <TextView
+                android:id="@+id/emp_name_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Employee"
+                android:textColor="@color/colorWhite" />
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/btn_profile"
+                android:src="@drawable/ic_icon_profile"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="3dp"
+                android:layout_gravity="center"/>
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/btn_logout"
+                android:src="@drawable/ic_logout"
+                android:gravity="center"
+
+                android:background="@color/colorPrimary"
+                android:layout_gravity="center"/>
 
 
 
+
+
+        </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
+
+
 
     <TextView
         android:layout_width="match_parent"
@@ -55,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/complaint_emp_recyclerview"
-        android:scrollbars="vertical"/>
+        android:scrollbars="none"/>
 
 
 

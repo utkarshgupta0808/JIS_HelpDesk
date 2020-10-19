@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    tools:context=".AdminNotificationFragment">
+
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:strokeWidth="1dp"
+        android:layout_gravity="center"
+        app:strokeColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="30dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:paddingEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:paddingStart="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginBottom="30dp"
+                android:text="Send Notification"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:hint="Notification Title"
+                android:paddingStart="10dp"
+                android:id="@+id/noti_title"
+                android:paddingEnd="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:hint="Notification Body Text"
+                android:paddingStart="10dp"
+                android:id="@+id/noti_text"
+                android:paddingEnd="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/send_noti"
+                android:layout_width="match_parent"
+                android:layout_marginStart="25dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                app:background="@color/colorPrimaryDark"
+                app:cornerRadius="20dp"
+                android:paddingStart="20dp"
+                android:layout_marginEnd="25dp"
+                android:paddingEnd="20dp"
+
+                android:text="Send Notification"
+                android:textColor="@color/colorAccent" />
+
+        </LinearLayout>
+
+
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+
+
+
+
+
+
+
+</LinearLayout>

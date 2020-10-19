@@ -9,50 +9,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ReceiveNotificationActivity"></activity>
 
-        <activity android:name="com.is.jishelpdesk.ComplaintRegisteredActivity"
-            android:parentActivityName="com.is.jishelpdesk.WelcomePageActivity"/>
-        <activity
-            android:name="com.is.jishelpdesk.ComplaintInfoEmpActivity"
-            android:parentActivityName="com.is.jishelpdesk.ComplaintInfoEmpActivity" />
-        <activity android:name="com.is.jishelpdesk.EmpProfileActivity" />
-        <activity
-            android:name="com.is.jishelpdesk.AssignEmpActivity"
-            android:parentActivityName="com.is.jishelpdesk.ComplaintAdminActivity" />
-        <activity
-            android:name="com.is.jishelpdesk.ComplaintInfoAdminActivity"
-            android:parentActivityName="com.is.jishelpdesk.ComplaintAdminActivity" />
-        <activity
-            android:name="com.is.jishelpdesk.ForgotPassAdminActivity"
-            android:parentActivityName="com.is.jishelpdesk.AdminLoginActivity" />
-        <activity
-            android:name="com.is.jishelpdesk.ComplaintEmpActivity"
-            android:parentActivityName="com.is.jishelpdesk.WelcomePageActivity" />
-        <activity
-            android:name="com.is.jishelpdesk.EmpRegisterActivity"
-            android:parentActivityName="com.is.jishelpdesk.EmpLoginActivity" />
-        <activity
-            android:name="com.is.jishelpdesk.ComplaintAdminActivity"
-            android:parentActivityName="com.is.jishelpdesk.WelcomePageActivity" />
-        <activity
-            android:name="com.is.jishelpdesk.EmpLoginActivity"
-            android:parentActivityName="com.is.jishelpdesk.WelcomePageActivity" />
-        <activity
-            android:name="com.is.jishelpdesk.AdminLoginActivity"
-            android:parentActivityName="com.is.jishelpdesk.WelcomePageActivity" />
-        <activity
-            android:name="com.is.jishelpdesk.ComplaintActivity"
-            android:parentActivityName="com.is.jishelpdesk.WelcomePageActivity" />
-        <activity android:name="com.is.jishelpdesk.WelcomePageActivity" />
-        <activity android:name="com.is.jishelpdesk.SplashActivity">
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_launcher_background" />
+        <!--
+ Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <activity android:name=".AddPhotoActivity" />
+        <activity android:name=".AdminEmpProfileActivity" />
+        <activity android:name=".PhotoPreviewActivity" />
+        <activity android:name=".AdminMainActivity" />
+        <activity android:name=".ComplaintRegisteredActivity" />
+        <activity android:name=".ComplaintInfoEmpActivity" />
+        <activity android:name=".EmpProfileActivity" />
+        <activity android:name=".AssignEmpActivity" />
+        <activity android:name=".ComplaintInfoAdminActivity" />
+        <activity android:name=".ForgotPassAdminActivity" />
+        <activity android:name=".ComplaintEmpActivity" />
+        <activity android:name=".EmpRegisterActivity" />
+        <activity android:name=".ComplaintAdminActivity" />
+        <activity android:name=".EmpLoginActivity" />
+        <activity android:name=".AdminLoginActivity" />
+        <activity android:name=".ComplaintActivity" />
+        <activity android:name=".WelcomePageActivity" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>

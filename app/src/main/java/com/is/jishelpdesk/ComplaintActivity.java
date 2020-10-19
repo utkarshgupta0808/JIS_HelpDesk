@@ -8,6 +8,7 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -41,6 +42,7 @@ public class ComplaintActivity extends AppCompatActivity {
     String cDate;
     Calendar calendar;
     String currentDate;
+    ImageView btnBack;
     long counterComplaint;
 
 
@@ -63,10 +65,20 @@ public class ComplaintActivity extends AppCompatActivity {
         addressText=findViewById(R.id.address);
         btn_submit=findViewById(R.id.buttonSubmit);
         btn_reset=findViewById(R.id.buttonReset);
+        btnBack=findViewById(R.id.btn_back);
 
 
 
         complaintText.setMovementMethod(new ScrollingMovementMethod());
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(ComplaintActivity.this,WelcomePageActivity.class);
+                finish();
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -201,7 +213,13 @@ public class ComplaintActivity extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent=new Intent(ComplaintActivity.this,WelcomePageActivity.class);
+        finish();
+        startActivity(intent);
+    }
 
     public void resetFields(){
         nameText.setText("");

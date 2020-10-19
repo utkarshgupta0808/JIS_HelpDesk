@@ -3,136 +3,195 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/image_background"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".EmpRegisterActivity">
 
     <androidx.appcompat.widget.Toolbar
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
-    android:id="@+id/toolbar"
-    app:titleTextColor="@color/colorAccent"
-    app:title="JIS HelpDesk"/>
-
-    <androidx.cardview.widget.CardView
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_marginTop="30dp"
-        android:layout_height="wrap_content"
-        android:elevation="100dp"
-        app:cardCornerRadius="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:paddingBottom="20dp">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Employee Registration"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="40dp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_gravity="center"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="30dp"
-                android:id="@+id/emp_name"
-                android:background="@drawable/custom_edittext"
-                android:layout_marginEnd="20dp"
-                android:layout_marginStart="20dp"
-                android:drawableStart="@drawable/ic_baseline_person_24"
-                android:hint="Name"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"/>
-
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:id="@+id/emp_address"
-                android:background="@drawable/custom_edittext"
-                android:layout_marginEnd="20dp"
-                android:layout_marginStart="20dp"
-                android:hint="Address"
-                android:paddingStart="10dp"
-                android:drawableStart="@drawable/ic_baseline_location_on_24"
-                android:paddingEnd="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"/>
-
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_edittext"
-                android:layout_marginEnd="20dp"
-                android:layout_marginStart="20dp"
-                android:drawableStart="@drawable/ic_baseline_credit_card_24"
-                android:hint="PAN Number"
-                android:paddingStart="10dp"
-                android:id="@+id/emp_pan"
-                android:paddingEnd="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"/>
-
-            <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/custom_edittext"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:drawableStart="@drawable/ic_baseline_credit_card_24"
-            android:hint="Aadhaar Number"
-            android:paddingStart="10dp"
-            android:id="@+id/emp_aadhaar"
-            android:paddingEnd="10dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"/>
-
-
-            <LinearLayout
+            <ImageView
+                android:id="@+id/btn_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="30dp"
-                android:layout_marginTop="40dp"
-                android:orientation="horizontal">
+                android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                android:layout_marginEnd="5dp"/>
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/custom_button1"
-                    android:text="REGISTER"
-                    android:id="@+id/btn_reg"
-                    android:textColor="@color/colorAccent" />
+            <TextView
+                android:id="@+id/loc_text_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Employee Register"
+                android:textColor="@color/colorWhite" />
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
-                    android:id="@+id/btn_reset"
-                    android:background="@drawable/custom_button2"
-                    android:text="RESET"
-                    android:textColor="@color/colorPrimaryDark" />
 
-            </LinearLayout>
+
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Employee Registration"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_gravity="center"/>
+
+
+
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/emp_photo_card"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="40dp"
+                    app:strokeColor="@color/colorPrimaryDark"
+                    app:cardCornerRadius="5dp"
+                    app:strokeWidth="0.5dp">
+
+
+                    <ImageView
+                        android:id="@+id/emp_photo"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="fitCenter"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baseline_add_a_photo_24"/>
+
+
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/emp_name"
+                    android:background="@drawable/custom_edittext"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:drawableStart="@drawable/ic_baseline_person_24"
+                    android:hint="Name"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"/>
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/emp_address"
+                    android:background="@drawable/custom_edittext"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:hint="Address"
+                    android:paddingStart="10dp"
+                    android:drawableStart="@drawable/ic_baseline_location_on_24"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"/>
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/custom_edittext"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:drawableStart="@drawable/ic_baseline_credit_card_24"
+                    android:hint="PAN Number"
+                    android:paddingStart="10dp"
+                    android:id="@+id/emp_pan"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/custom_edittext"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:drawableStart="@drawable/ic_baseline_credit_card_24"
+                    android:hint="Aadhaar Number"
+                    android:paddingStart="10dp"
+                    android:id="@+id/emp_aadhaar"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"/>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="40dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="120dp"
+                        android:layout_height="60dp"
+                        app:cornerRadius="20dp"
+                        app:strokeColor="@color/colorPrimaryDark"
+                        android:text="REGISTER"
+                        app:rippleColor="#EAD3D3"
+                        android:id="@+id/btn_reg"
+                        android:textColor="@color/colorAccent" />
+
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="120dp"
+                        android:layout_height="60dp"
+                        android:backgroundTint="#EAD3D3"
+                        app:rippleColor="@color/colorPrimaryDark"
+                        android:text="RESET"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        app:cornerRadius="20dp"
+                        app:strokeColor="@color/colorPrimaryDark"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_marginStart="50dp"
+                        android:id="@+id/btn_reset"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
 
 
 

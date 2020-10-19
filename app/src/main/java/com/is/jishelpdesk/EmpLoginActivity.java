@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -38,6 +39,7 @@ public class EmpLoginActivity extends AppCompatActivity {
     CountryCodePicker countryCodePicker;
     String verficationId;
     PhoneAuthProvider.ForceResendingToken token;
+    ImageView btnBack;
     Boolean verificationInProgress=false;
     FirebaseFirestore firebaseFirestore;
     ProgressDialog progressDialog;
@@ -56,8 +58,18 @@ public class EmpLoginActivity extends AppCompatActivity {
         btnLogin=findViewById(R.id.login_button);
         resendOTP=findViewById(R.id.resend);
         otp=findViewById(R.id.otp);
+        btnBack=findViewById(R.id.btn_back);
 
         mobileNumber=findViewById(R.id.number);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent=new Intent(EmpLoginActivity.this,WelcomePageActivity.class);
+                finish();
+//                startActivity(intent);
+            }
+        });
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -194,8 +206,17 @@ public class EmpLoginActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(EmpLoginActivity.this);
         progressDialog.show();
         progressDialog.setContentView(R.layout.process_dialog);
+        progressDialog.setCanceledOnTouchOutside(false);
         Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+//        Intent intent=new Intent(EmpLoginActivity.this,WelcomePageActivity.class);
+        finish();
+//        startActivity(intent);
     }
 }

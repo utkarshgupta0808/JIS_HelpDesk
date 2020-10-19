@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,10 +7,12 @@
     android:layout_marginEnd="15dp"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="10dp"
-    android:id="@+id/card_complaint"
+    android:id="@+id/card_emp"
     android:scrollbars="vertical"
     android:elevation="20dp"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="20dp"
+    app:strokeColor="@color/colorPrimaryDark"
+    app:strokeWidth="0.2dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,95 +20,160 @@
         android:layout_marginEnd="10dp"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="View Profile"
-            android:textSize="12sp"
-            android:textColor="#4E481F"
-            android:layout_marginTop="5dp"
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="end"-->
+<!--            android:text="View Profile"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textColor="#4E481F"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginEnd="5dp"-->
+<!--            android:id="@+id/view_profile"/>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:orientation="horizontal"
+            android:layout_marginEnd="10dp">
+
+            <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                android:id="@+id/photo_card"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="30dp">
+
+                <ImageView
+                    android:id="@+id/emp_photo_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/profile"
+                    android:scaleType="fitCenter"/>
+
+            </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <!--        <TextView-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:layout_gravity="end"-->
+                <!--            android:text="View Profile"-->
+                <!--            android:textSize="12sp"-->
+                <!--            android:textColor="#4E481F"-->
+                <!--            android:layout_marginTop="5dp"-->
+                <!--            android:layout_marginEnd="5dp"-->
+                <!--            android:id="@+id/view_profile"/>-->
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emp01"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/empid"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="17sp"/>
+
+
+
+
+
+                <TextView
+                    android:id="@+id/ename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="jfnjkshgjdskhg"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="17sp" />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+911234567890"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/date"
+                    android:textSize="17sp"/>
+
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Emp01"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:id="@+id/empid"-->
+<!--            android:textColor="@color/colorPrimaryDark"-->
+<!--            android:textSize="17sp"/>-->
+
+
+
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/ename"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:text="jfnjkshgjdskhg"-->
+<!--            android:textColor="@color/colorPrimary"-->
+<!--            android:textSize="17sp" />-->
+
+
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="+911234567890"-->
+<!--            android:textColor="@color/colorPrimary"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:id="@+id/date"-->
+<!--            android:textSize="17sp"/>-->
+
+        <TableRow
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="5dp"
-            android:id="@+id/view_profile"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Employee ID        : "
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Emp01"
-                android:id="@+id/empid"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20sp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Employee Name : "
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/ename"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:maxLines="1"
-                android:text="jfnjkshgjdskhgsdkjgkdjgkjdkjgkdjkgjjkdgffjkljkjfjgkf"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20sp" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginStart="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Number                : "
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+911234567890"
-                android:textColor="@color/colorPrimary"
-                android:id="@+id/date"
-                android:textSize="20sp"/>
-
-
-
-        </LinearLayout>
+            android:background="#EA7A7A"
+            android:layout_marginStart="5dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -124,4 +191,4 @@
 
 
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

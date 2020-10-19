@@ -36,13 +36,13 @@
         android:textSize="30sp"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="10dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/complaint_recyclerview"
-        android:scrollbars="vertical"/>
+        android:scrollbars="none"/>
 
 
 

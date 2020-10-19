@@ -8,13 +8,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Objects;
 
 public class WelcomePageActivity extends AppCompatActivity {
 
-    Button btnComplaint, btnAdminLogin, btnEmpLogin;
+    Button btnComplaint;
+    TextView btnAdminLogin, btnEmpLogin;
     private long backPressedTime;
     ProgressDialog progressDialog;
 
@@ -31,6 +33,7 @@ public class WelcomePageActivity extends AppCompatActivity {
                 showProgress();
                 Intent intent=new Intent(WelcomePageActivity.this,ComplaintActivity.class);
                 startActivity(intent);
+                finish();
                 progressDialog.dismiss();
             }
         });

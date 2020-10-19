@@ -2,16 +2,17 @@ package com.is.jishelpdesk;
 
 public class EmpModel {
 
-    String name, number, pan, address, aadhaar;
+    String name, number, pan, address, aadhaar, photo;
     long empid;
 
-    public EmpModel(String name, String number, String pan, String address, long empid, long cActive, long ctotal) {
+    public EmpModel(String name, String number,String aadhaar, String pan, String address, long empid, long cActive, long ctotal, String photo) {
         this.name = name;
         this.number = number;
         this.pan = pan;
         this.address = address;
         this.empid = empid;
         this.aadhaar=aadhaar;
+        this.photo=photo;
 
 
     }
@@ -43,5 +44,7 @@ public class EmpModel {
         return aadhaar;
     }
 
-
+    public String getPhoto() {
+        return photo;
+    }
 }

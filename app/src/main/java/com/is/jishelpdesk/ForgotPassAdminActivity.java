@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class ForgotPassAdminActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     Toolbar toolBar;
     private ProgressDialog progressDialog;
+    ImageView btnBack;
 
 
     @Override
@@ -41,13 +43,25 @@ public class ForgotPassAdminActivity extends AppCompatActivity {
         textViewForgotSignIn = findViewById(R.id.textViewSignForgot);
         mAuth = FirebaseAuth.getInstance();
         toolBar=findViewById(R.id.toolbar);
+        btnBack=findViewById(R.id.btn_back);
 
 
         textViewForgotSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                Intent intent=new Intent(ForgotPassAdminActivity.this,AdminLoginActivity.class);
                 finish();
+                startActivity(intent);
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(ForgotPassAdminActivity.this,AdminLoginActivity.class);
+                finish();
+                startActivity(intent);
             }
         });
 
@@ -104,5 +118,11 @@ public class ForgotPassAdminActivity extends AppCompatActivity {
         );
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent=new Intent(ForgotPassAdminActivity.this,AdminLoginActivity.class);
+        finish();
+        startActivity(intent);
+    }
 }

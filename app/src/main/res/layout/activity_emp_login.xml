@@ -9,144 +9,175 @@
     tools:context=".EmpLoginActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
         android:id="@+id/toolbar"
-        app:titleTextColor="@color/colorAccent"
-        app:title="JIS HelpDesk">
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                android:layout_marginEnd="5dp"/>
+
+            <TextView
+                android:id="@+id/loc_text_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="Employee"
+                android:textColor="@color/colorWhite" />
 
 
 
+        </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginEnd="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="80dp"
         android:background="#0B154C"
         app:cardElevation="10dp"
         app:cardCornerRadius="15dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Employee"
-                android:layout_gravity="center"
-                android:textSize="25sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"
-                android:layout_marginBottom="30dp"/>
-
-            <com.rilixtech.widget.countrycodepicker.CountryCodePicker
-                android:id="@+id/ccp"
-                android:layout_width="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginBottom="5dp"
-                android:layout_marginStart="20dp"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:background="@drawable/custom_edittext"
-                android:hint="Mobile Number"
-                android:drawablePadding="5dp"
-                android:inputType="number"
-                android:layout_marginStart="20dp"
-                android:drawableStart="@drawable/ic_baseline_phone_24"
-                android:layout_marginEnd="20dp"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="20sp"
-                android:maxLines="1"
-                android:paddingStart="10dp"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="10dp"
-                android:gravity="center_vertical"
-                android:layout_gravity="center_horizontal"
-                android:id="@+id/number"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal">
-
-                <ProgressBar
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:id="@+id/progress_bar"
-                    style="?android:attr/progressBarStyle"
-                    android:visibility="invisible" />
-
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="20dp"
-                    android:maxLines="1"
-                    android:maxLength="6"
-                    android:inputType="number"
-                    android:gravity="center"
-                    android:layout_marginEnd="20dp"
-                    android:hint="Enter OTP"
-                    android:layout_marginTop="30dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:visibility="invisible"
-                    android:drawablePadding="5dp"
-                    android:paddingStart="10dp"
-                    android:paddingBottom="10dp"
-                    android:background="@drawable/custom_edittext"
-                    android:layout_weight="1"
-                    android:paddingTop="10dp"
-                    android:paddingEnd="10dp"
-                    android:layout_gravity="center_horizontal"
-                    android:id="@+id/otp"/>
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-                    android:visibility="invisible"
-                    android:layout_marginEnd="10dp"
-                    android:text="RESEND"
-                    android:textColor="@color/colorPrimary"
-                    android:id="@+id/resend"/>
+                    android:layout_height="wrap_content"
+                    android:text="Employee"
+                    android:layout_gravity="center"
+                    android:textSize="25sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="20dp"/>
+
+                <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:background="@drawable/custom_edittext"
+                    android:hint="Mobile Number"
+                    android:drawablePadding="5dp"
+                    android:inputType="number"
+                    android:layout_marginStart="20dp"
+                    android:drawableStart="@drawable/ic_baseline_phone_24"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"
+                    android:maxLines="1"
+                    android:paddingStart="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="10dp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/number"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:id="@+id/progress_bar"
+                        style="?android:attr/progressBarStyle"
+                        android:visibility="invisible" />
+
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="20dp"
+                        android:maxLines="1"
+                        android:maxLength="6"
+                        android:inputType="number"
+                        android:gravity="center"
+                        android:layout_marginEnd="20dp"
+                        android:hint="Enter OTP"
+                        android:layout_marginTop="30dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:visibility="invisible"
+                        android:drawablePadding="5dp"
+                        android:paddingStart="10dp"
+                        android:paddingBottom="10dp"
+                        android:background="@drawable/custom_edittext"
+                        android:layout_weight="1"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/otp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:visibility="invisible"
+                        android:layout_marginEnd="10dp"
+                        android:text="RESEND"
+                        android:textColor="@color/colorPrimary"
+                        android:id="@+id/resend"/>
+
+                </LinearLayout>
+
+
+
+
+
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    app:backgroundTint="@color/colorPrimaryDark"
+                    app:cornerRadius="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginStart="25dp"
+                    android:paddingStart="20dp"
+                    android:id="@+id/login_button"
+                    android:paddingEnd="20dp"
+                    android:text="NEXT"
+                    android:textColor="@color/colorAccent"/>
+
 
             </LinearLayout>
 
 
-
-
-
-
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_button1"
-                android:layout_marginTop="20dp"
-                android:layout_gravity="center"
-                android:paddingStart="20dp"
-                android:id="@+id/login_button"
-                android:paddingEnd="20dp"
-                android:text="NEXT"
-                android:textColor="@color/colorAccent"/>
-
-
-        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 

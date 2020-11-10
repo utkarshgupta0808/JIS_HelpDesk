@@ -15,7 +15,7 @@ import java.util.Objects;
 
 public class WelcomePageActivity extends AppCompatActivity {
 
-    Button btnComplaint;
+    Button btnComplaint, btnApplicationForm;
     TextView btnAdminLogin, btnEmpLogin;
     private long backPressedTime;
     ProgressDialog progressDialog;
@@ -27,6 +27,7 @@ public class WelcomePageActivity extends AppCompatActivity {
 
 
         btnComplaint=findViewById(R.id.complaintButton);
+        btnApplicationForm=findViewById(R.id.customer_application_form_Button);
         btnComplaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,6 +36,15 @@ public class WelcomePageActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 progressDialog.dismiss();
+            }
+        });
+
+        btnApplicationForm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(WelcomePageActivity.this,CustomerApplicationActivity.class);
+                startActivity(intent);
+
             }
         });
 

@@ -24,7 +24,7 @@ public class AdminEmpProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_emp_profile);
+        setContentView(R.layout.activity_emp_profile);
 
         toolbar=findViewById(R.id.toolbar);
         name=findViewById(R.id.name);

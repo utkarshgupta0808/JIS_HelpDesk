@@ -175,6 +175,19 @@
                     android:text="Submit your Complaint"
                     android:textColor="@color/colorAccent" />
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/customer_application_form_Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    app:backgroundTint="@color/colorPrimaryDark"
+                    app:cornerRadius="20dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:text="Application Form"
+                    android:textColor="@color/colorAccent" />
+
 
 
 

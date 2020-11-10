@@ -89,7 +89,7 @@ public class AdminLoginActivity extends AppCompatActivity {
                             if (task.isSuccessful()){
 
                                 Toast.makeText(AdminLoginActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(AdminLoginActivity.this, AdminMainActivity.class);
+                                Intent intent = new Intent(AdminLoginActivity.this, ComplaintAdminActivity.class);
 //                            intent.putExtra("user_id", "" + userId);
                                 startActivity(intent);
                                 finish();
@@ -149,7 +149,7 @@ public class AdminLoginActivity extends AppCompatActivity {
 
     private void sendToMain() {
 
-        Intent mainIntent = new Intent(AdminLoginActivity.this, AdminMainActivity.class);
+        Intent mainIntent = new Intent(AdminLoginActivity.this, ComplaintAdminActivity.class);
         startActivity(mainIntent);
         finish();
 

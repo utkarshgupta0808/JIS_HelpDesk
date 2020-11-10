@@ -70,7 +70,7 @@ public class AddPhotoActivity extends AppCompatActivity {
         imgItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                chooseItemImage();
+                chooseProfilePic();
             }
         });
 
@@ -132,7 +132,7 @@ public class AddPhotoActivity extends AppCompatActivity {
 
 
     }
-    private void chooseItemImage() {
+    private void chooseProfilePic() {
 
         Intent intent=new Intent();
         intent.setType("image/*");
